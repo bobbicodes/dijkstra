@@ -22,18 +22,15 @@
 
 (comment
   (show! g)
-  (show! demo-graph)
-  )
+  (show! demo-graph))
 
 (defn neighbors [node g costs]
-  (->> (g node)
-       (map (fn [[neighbor edge-cost]]
-              [neighbor [(first (costs neighbor)) edge-cost]]))
-       (into {})))
+  (into {} (map (fn [[neighbor cost]]
+                  [neighbor [(first (costs neighbor)) cost]])
+                (g node))))
 
-(defn update-neighbor
-  [parent parent-cost costs [neighbor [old-cost edge-cost]]]
-  (let [new-cost (+ parent-cost edge-cost)]
+(defn update-neighbor [parent parent-cost costs [neighbor [old-cost cost]]]
+  (let [new-cost (+ parent-cost cost)]
     (if (< new-cost old-cost)
       (assoc costs neighbor [new-cost parent])
       costs)))
@@ -60,20 +57,18 @@
                paths))))
 
 (defn dijkstra [a b g]
-   (loop [costs (assoc (zipmap (keys g)
-                               (repeat [Integer/MAX_VALUE nil]))
-                       a [0 a])
-          nodes (set (keys g))]
-     (let [cur (next-node costs nodes)
-           cost (first (costs cur))]
-       (cond (nil? cur) (shortest-paths a costs)
-             (= cur b) [cost (update-path a b costs)]
-             :else
-             (recur (reduce #(update-neighbor cur cost %1 %2)
-                            costs
-                            (filter #(nodes (first %))
-                                    (neighbors cur g costs)))
-                    (disj nodes cur))))))
+  (loop [costs (assoc (zipmap (keys g) (repeat [Integer/MAX_VALUE nil])) a [0 a])
+         nodes (set (keys g))]
+    (let [cur (next-node costs nodes)
+          cost (first (costs cur))]
+      (cond (nil? cur) (shortest-paths a costs)
+            (= cur b) [cost (update-path a b costs)]
+            :else
+            (recur (reduce #(update-neighbor cur cost %1 %2)
+                           costs
+                           (filter #(nodes (first %))
+                                   (neighbors cur g costs)))
+                   (disj nodes cur))))))
 
 (defn dijkstra-pm [a b g]
   (loop [frontier (priority-map a 0) explored {}]
@@ -86,7 +81,80 @@
                (assoc explored node cost)))
       {b (b explored)})))
 
+(def costs (assoc (zipmap (keys demo-graph)
+                          (repeat [Integer/MAX_VALUE nil])) :red [0 :red]))
+
+costs
+
+(def nodes (set (keys demo-graph)))
+
+nodes
+
+(defn next-node [costs nodes]
+  (->> costs
+       (filter #(nodes (first %)))
+       (sort-by #(first (second %)))
+       ffirst))
+
+(next-node costs nodes)
+
+(def cur
+  (->> costs
+       (filter #(nodes (first %)))
+       (sort-by #(first (second %)))
+       ffirst))
+
+cur
+
+(def cost
+  (first (costs cur)))
+
+cost
+
+(cur demo-graph)
+
+(defn neighbor-cost [[neighbor cost]]
+   [neighbor [(first (neighbor costs)) cost]])
+
+(filter #(nodes (first %))
+        (into {} (map neighbor-cost (cur demo-graph))))
+
+(defn update-neighbor [parent parent-cost costs [neighbor [old-cost cost]]]
+  (let [new-cost (+ parent-cost cost)]
+    (if (< new-cost old-cost)
+      (assoc costs neighbor [new-cost parent])
+      costs)))
+
+(reduce #(update-neighbor cur cost %1 %2)
+        costs
+        (filter #(nodes (first %))
+                (into {} (map neighbor-cost (cur demo-graph)))))
+
+(disj nodes cur)
+
 (comment
+
+  demo-graph
+
+  {:red {:green 10, :blue 5, :orange 8}
+   :green {:red 10, :blue 3}
+   :blue {:green 3, :red 5, :purple 7}
+   :purple {:blue 7, :orange 2}
+   :orange {:purple 2, :red 2}}
+
+  #{:orange :green :red :blue :purple}
+
   (dijkstra :red :green demo-graph)
-  (dijkstra-pm :red :green demo-graph)
-  )
+  (dijkstra-pm :red :green demo-graph))
+
+(def graph-db
+  (atom (zipmap (keys demo-graph)
+                  (repeat {:visited false
+                           :distance Integer/MAX_VALUE}))))
+
+(defn initial-distances [initial-node]
+  (swap! graph-db assoc-in [initial-node :distance] 0))
+
+(initial-distances :red)
+
+@graph-db
