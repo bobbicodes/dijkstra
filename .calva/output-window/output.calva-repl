@@ -667,3 +667,228 @@ clj::porkostomus.dijkstra=>
 clj::porkostomus.dijkstra=> 
 ([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
 clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+{:1 [2147483647 nil], :2 [2147483647 nil], :3 [2147483647 nil], :4 [2147483647 nil], :red [0 :red]}
+clj::porkostomus.dijkstra=> 
+#{:4 :1 :2 :3}
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+; Execution error (OutOfMemoryError) at java.util.Arrays/copyOf (Arrays.java:3745).
+; Java heap space
+java.util.Arrays/copyOf (Arrays.java:3745)
+java.lang.AbstractStringBuilder/ensureCapacityInternal (AbstractStringBuilder.java:172)
+java.lang.AbstractStringBuilder/append (AbstractStringBuilder.java:538)
+java.lang.StringBuffer/append (StringBuffer.java:312)
+java.io.StringWriter/write (StringWriter.java:106)
+clojure.core/fn (core_print.clj:129)
+clojure.core/fn (core_print.clj:128)
+clojure.lang.MultiFn/invoke (MultiFn.java:234)
+clojure.core/pr-on (core.clj:3674)
+clojure.core/pr-on (core.clj:3668)
+clojure.core/print-sequential (core_print.clj:66)
+clojure.core/fn (core_print.clj:225)
+clojure.lang.MultiFn/invoke (MultiFn.java:234)
+clojure.core/pr-on (core.clj:3674)
+clojure.core/pr-on (core.clj:3668)
+clojure.core/print-sequential (core_print.clj:66)
+clojure.core/fn (core_print.clj:174)
+clojure.lang.MultiFn/invoke (MultiFn.java:234)
+clojure.core/pr-on (core.clj:3674)
+clojure.core/pr (core.clj:3677)
+clojure.core/apply (core.clj:665)
+clojure.core/pr-str (core.clj:4736)
+cider.nrepl.middleware.debug/pr-short (debug.clj:190)
+cider.nrepl.middleware.debug/pr-short (debug.clj:182)
+cider.nrepl.middleware.debug/read-debug-command (debug.clj:343)
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+; Execution error (OutOfMemoryError) at java.util.Arrays/copyOf (Arrays.java:3745).
+; Java heap space
+java.util.Arrays/copyOf (Arrays.java:3745)
+java.lang.AbstractStringBuilder/ensureCapacityInternal (AbstractStringBuilder.java:172)
+java.lang.AbstractStringBuilder/append (AbstractStringBuilder.java:538)
+java.lang.StringBuffer/append (StringBuffer.java:312)
+java.io.StringWriter/write (StringWriter.java:106)
+clojure.core/fn (core_print.clj:129)
+clojure.core/fn (core_print.clj:128)
+clojure.lang.MultiFn/invoke (MultiFn.java:234)
+clojure.core/pr-on (core.clj:3674)
+clojure.core/pr-on (core.clj:3668)
+clojure.core/print-sequential (core_print.clj:66)
+clojure.core/fn (core_print.clj:225)
+clojure.lang.MultiFn/invoke (MultiFn.java:234)
+clojure.core/pr-on (core.clj:3674)
+clojure.core/pr-on (core.clj:3668)
+clojure.core/print-sequential (core_print.clj:66)
+clojure.core/fn (core_print.clj:174)
+clojure.lang.MultiFn/invoke (MultiFn.java:234)
+clojure.core/pr-on (core.clj:3674)
+clojure.core/pr (core.clj:3677)
+clojure.core/apply (core.clj:665)
+clojure.core/pr-str (core.clj:4736)
+cider.nrepl.middleware.debug/pr-short (debug.clj:190)
+cider.nrepl.middleware.debug/pr-short (debug.clj:182)
+cider.nrepl.middleware.debug/read-debug-command (debug.clj:343)
+clj::porkostomus.dijkstra=> 
+nil
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/map-vals
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/remove-keys
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:red 0, :blue 5, :orange 8, :green 8, :purple 10}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+; Execution error (ArityException) at porkostomus.dijkstra/eval74159 (REPL:117).
+; Wrong number of args (2) passed to: porkostomus.dijkstra/dijkstra-pm
+porkostomus.dijkstra/eval74159 (NO_SOURCE_FILE:117)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+{:red 0, :blue 5, :orange 8, :green 8, :purple 10}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+8
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+(map-vals (remove-keys (g v) r) (partial + d))
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+{}
+clj::porkostomus.dijkstra=> 
+; Syntax error (UnsupportedOperationException) compiling recur at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:87:9).
+; Can only recur from tail position
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7115)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6118)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$IfExpr$Parser/parse (Compiler.java:2829)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$DefExpr$Parser/parse (Compiler.java:596)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+{}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 

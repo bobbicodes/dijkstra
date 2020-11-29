@@ -1,5 +1,6 @@
 (ns porkostomus.dijkstra
-  (:require [rhizome.viz :refer [view-graph]]))
+  (:require [rhizome.viz :refer [view-graph]]
+            [clojure.data.priority-map :refer [priority-map]]))
 
 (defn show! [graph]
   (view-graph
@@ -37,9 +38,9 @@
       (assoc costs neighbor [new-cost parent])
       costs)))
 
-(defn next-node [costs unvisited]
+(defn next-node [costs nodes]
   (->> costs
-       (filter #(unvisited (first %)))
+       (filter #(nodes (first %)))
        (sort-by #(first (second %)))
        ffirst))
 
@@ -53,7 +54,7 @@
   (let [paths (->> (keys costs)
                    (remove #{s})
                    (map (fn [n] [n (unwind-path s n costs)])))]
-    (into (hash-map)
+    (into {}
           (map (fn [[n p]]
                  [n [(first (costs n)) p]])
                paths))))
@@ -65,10 +66,8 @@
           nodes (set (keys g))]
      (let [cur (next-node costs nodes)
            cost (first (costs cur))]
-       (cond (nil? cur)
-             (shortest-paths a costs)
-             (= cur b)
-             [cost (unwind-path a b costs)]
+       (cond (nil? cur) (shortest-paths a costs)
+             (= cur b) [cost (unwind-path a b costs)]
              :else
              (recur (reduce #(process-neighbor cur cost %1 %2)
                             costs
@@ -76,19 +75,14 @@
                                     (neighbors cur g costs)))
                     (disj nodes cur))))))
 
-(comment
-  
-  (let [costs (init-costs :red g)
-        unvi (set (keys g))]
-  (filter #(unvi (first %)) costs))
+(defn dijkstra-pm [a b g]
+  (loop [q (priority-map a 0) r {}]
+    (if-let [[node cost] (peek q)]
+      (let [nodes (select-keys (g node) (remove r (keys (g node))))
+            costs (into {} (for [[k v] nodes] [k (+ cost v)]))]
+        (recur (merge-with min (pop q) costs) (assoc r node cost)))
+      {b (b r)})))
 
-  (ffirst (sort-by (comp first second)
-                   (filter (comp (set (keys demo-graph))
-                                 first)
-                           (init-costs :red demo-graph))))
-  
-  (next-node (init-costs :red demo-graph)
-             (set (keys demo-graph)))
-  #{:orange :green :red :blue :purple}
-  (dijkstra :red :green demo-graph)
+(comment
+  (dijkstra-pm :red :green demo-graph)
   )
