@@ -892,3 +892,105 @@ clj::porkostomus.dijkstra=>
 clj::porkostomus.dijkstra=> 
 {:green 8}
 clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:red 0, :blue 5, :orange 8, :green 8, :purple 10}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+; Syntax error (UnsupportedOperationException) compiling recur at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:83:9).
+; Can only recur from tail position
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7115)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6118)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6118)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$IfExpr$Parser/parse (Compiler.java:2829)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$DefExpr$Parser/parse (Compiler.java:596)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:green 8}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra-pm
+clj::porkostomus.dijkstra=> 
+{:red 0, :blue 5, :orange 8, :green 8, :purple 10}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/update-neighbor
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 

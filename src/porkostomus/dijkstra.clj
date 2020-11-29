@@ -31,7 +31,7 @@
               [neighbor [(first (costs neighbor)) edge-cost]]))
        (into {})))
 
-(defn process-neighbor
+(defn update-neighbor
   [parent parent-cost costs [neighbor [old-cost edge-cost]]]
   (let [new-cost (+ parent-cost edge-cost)]
     (if (< new-cost old-cost)
@@ -44,7 +44,7 @@
        (sort-by #(first (second %)))
        ffirst))
 
-(defn unwind-path [a b costs]
+(defn update-path [a b costs]
   (letfn [(f [a b costs]
             (when-not (= a b)
               (cons b (f a (second (costs b)) costs))))]
@@ -53,7 +53,7 @@
 (defn shortest-paths [s costs]
   (let [paths (->> (keys costs)
                    (remove #{s})
-                   (map (fn [n] [n (unwind-path s n costs)])))]
+                   (map (fn [n] [n (update-path s n costs)])))]
     (into {}
           (map (fn [[n p]]
                  [n [(first (costs n)) p]])
@@ -67,22 +67,26 @@
      (let [cur (next-node costs nodes)
            cost (first (costs cur))]
        (cond (nil? cur) (shortest-paths a costs)
-             (= cur b) [cost (unwind-path a b costs)]
+             (= cur b) [cost (update-path a b costs)]
              :else
-             (recur (reduce #(process-neighbor cur cost %1 %2)
+             (recur (reduce #(update-neighbor cur cost %1 %2)
                             costs
                             (filter #(nodes (first %))
                                     (neighbors cur g costs)))
                     (disj nodes cur))))))
 
 (defn dijkstra-pm [a b g]
-  (loop [q (priority-map a 0) r {}]
-    (if-let [[node cost] (peek q)]
-      (let [nodes (select-keys (g node) (remove r (keys (g node))))
+  (loop [frontier (priority-map a 0) explored {}]
+    (if-let [[node cost] (peek frontier)]
+      (let [nodes (select-keys
+                   (g node)
+                   (remove explored (keys (g node))))
             costs (into {} (for [[k v] nodes] [k (+ cost v)]))]
-        (recur (merge-with min (pop q) costs) (assoc r node cost)))
-      {b (b r)})))
+        (recur (merge-with min (pop frontier) costs)
+               (assoc explored node cost)))
+      {b (b explored)})))
 
 (comment
+  (dijkstra :red :green demo-graph)
   (dijkstra-pm :red :green demo-graph)
   )
