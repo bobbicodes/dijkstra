@@ -530,3 +530,138 @@ clj::porkostomus.dijkstra=>
  :purple {:visited false, :distance 2147483647},
  :orange {:visited false, :distance 2147483647}}
 clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+; Execution error (ArityException) at porkostomus.dijkstra/initial-distances (REPL:156).
+; Wrong number of args (5) passed to: clojure.core/assoc-in
+clojure.lang.Atom/swap (Atom.java:79)
+clojure.core/swap! (core.clj:2355)
+clojure.core/swap! (core.clj:2345)
+porkostomus.dijkstra/initial-distances (NO_SOURCE_FILE:156)
+porkostomus.dijkstra/initial-distances (NO_SOURCE_FILE:155)
+porkostomus.dijkstra/eval117027 (NO_SOURCE_FILE:160)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+; Execution error (IllegalArgumentException) at porkostomus.dijkstra/initial-distances (REPL:156).
+; assoc expects even number of arguments after map/vector, found odd number
+clojure.core/assoc (core.clj:195)
+clojure.core/assoc (core.clj:190)
+clojure.lang.Atom/swap (Atom.java:79)
+clojure.core/swap! (core.clj:2355)
+clojure.core/swap! (core.clj:2345)
+porkostomus.dijkstra/initial-distances (NO_SOURCE_FILE:156)
+porkostomus.dijkstra/initial-distances (NO_SOURCE_FILE:155)
+porkostomus.dijkstra/eval117074 (NO_SOURCE_FILE:160)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:red {:distance 0, :current? true},
+ :green {:visited false, :distance 2147483647},
+ :blue {:visited false, :distance 2147483647},
+ :purple {:visited false, :distance 2147483647},
+ :orange {:visited false, :distance 2147483647}}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:red {:distance 0, :current? true, :visited? false},
+ :green {:visited false, :distance 2147483647},
+ :blue {:visited false, :distance 2147483647},
+ :purple {:visited false, :distance 2147483647},
+ :orange {:visited false, :distance 2147483647}}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+{:red {:distance 0, :current? true, :visited? false},
+ :green {:visited? false, :distance 2147483647},
+ :blue {:visited? false, :distance 2147483647},
+ :purple {:visited? false, :distance 2147483647},
+ :orange {:visited? false, :distance 2147483647}}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:red nil,
+  :green {:visited? false, :distance 2147483647},
+  :blue {:visited? false, :distance 2147483647},
+  :purple {:visited? false, :distance 2147483647},
+  :orange {:visited? false, :distance 2147483647}},
+ :current-node nil}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+; Execution error (ArityException) at porkostomus.dijkstra/initial-distances (REPL:157).
+; Wrong number of args (3) passed to: clojure.lang.PersistentArrayMap
+clojure.core/apply (core.clj:667)
+clojure.core/update-in (core.clj:6185)
+clojure.core/update-in (core.clj:6186)
+clojure.core/update-in (core.clj:6172)
+clojure.lang.Atom/swap (Atom.java:79)
+clojure.core/swap! (core.clj:2355)
+clojure.core/swap! (core.clj:2345)
+porkostomus.dijkstra/initial-distances (NO_SOURCE_FILE:157)
+porkostomus.dijkstra/initial-distances (NO_SOURCE_FILE:156)
+porkostomus.dijkstra/eval117286 (NO_SOURCE_FILE:163)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:red {:distance 0, :current? true, :visited? false},
+  :green {:visited? false, :distance 2147483647},
+  :blue {:visited? false, :distance 2147483647},
+  :purple {:visited? false, :distance 2147483647},
+  :orange {:visited? false, :distance 2147483647}},
+ :current-node :red}
+clj::porkostomus.dijkstra=> 

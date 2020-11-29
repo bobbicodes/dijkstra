@@ -148,12 +148,17 @@ cost
   (dijkstra-pm :red :green demo-graph))
 
 (def graph-db
-  (atom (zipmap (keys demo-graph)
-                  (repeat {:visited false
-                           :distance Integer/MAX_VALUE}))))
+  (atom {:nodes (zipmap (keys demo-graph)
+                        (repeat {:visited? false
+                                 :distance Integer/MAX_VALUE}))
+         :current-node nil}))
 
 (defn initial-distances [initial-node]
-  (swap! graph-db assoc-in [initial-node :distance] 0))
+  (swap! graph-db assoc-in
+         [:nodes initial-node] {:distance 0
+                                :current? true
+                                :visited? false})
+  (swap! graph-db assoc :current-node initial-node))
 
 (initial-distances :red)
 
