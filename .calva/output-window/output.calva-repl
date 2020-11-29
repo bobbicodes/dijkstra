@@ -1,0 +1,669 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj::user=> 
+
+; Jack-in done.
+clj::user=> 
+; Evaluating file: dijkstra.clj
+nil
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/neighbors
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/process-neighbor
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/get-next-node
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/unwind-path
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/all-shortest-paths
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+#{:orange :green :red :blue :purple}
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+nil
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:91:31).
+; Unable to resolve symbol: unvisited in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7174)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+([:red [0 :red]]
+ [:green [2147483647 nil]]
+ [:blue [2147483647 nil]]
+ [:purple [2147483647 nil]]
+ [:orange [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/next-node
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+{:red 0, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}
+clj::porkostomus.dijkstra=> 
+; Execution error (IllegalArgumentException) at java.util.TimSort/countRunAndMakeAscending (TimSort.java:355).
+; Don't know how to create ISeq from: java.lang.Integer
+clojure.lang.RT/seqFrom (RT.java:557)
+clojure.lang.RT/seq (RT.java:537)
+clojure.lang.RT/first (RT.java:693)
+clojure.core/first (core.clj:55)
+clojure.core/comp (core.clj:2569)
+clojure.core/sort-by (core.clj:3131)
+clojure.lang.AFunction/compare (AFunction.java:51)
+java.util.TimSort/countRunAndMakeAscending (TimSort.java:355)
+java.util.TimSort/sort (TimSort.java:220)
+java.util.Arrays/sort (Arrays.java:1441)
+clojure.core/sort (core.clj:3115)
+clojure.core/sort-by (core.clj:3119)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:50)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:47)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:69)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:66)
+porkostomus.dijkstra/eval48935 (NO_SOURCE_FILE:94)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+{:red 0, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:28:19).
+; Unable to resolve symbol: graph in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$DefExpr$Parser/parse (Compiler.java:596)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/neighbors
+clj::porkostomus.dijkstra=> 
+#{:orange :green :red :blue :purple}
+clj::porkostomus.dijkstra=> 
+{:red [0 :red], :green [2147483647 nil], :blue [2147483647 nil], :purple [2147483647 nil], :orange [2147483647 nil]}
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:88:15).
+; Unable to resolve symbol: a in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6384)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7174)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:88:15).
+; Unable to resolve symbol: a in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6384)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7174)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#function[clojure.core/filter/fn--5889]
+clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:0:0).
+; Unable to resolve symbol: costs in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:0:0).
+; Unable to resolve symbol: costs in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+{:1 [2147483647 nil], :2 [2147483647 nil], :3 [2147483647 nil], :4 [2147483647 nil], :red [0 :red]}
+clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
+; Wrong number of args (2) passed to: clojure.core/first--5384
+clojure.main/repl (main.clj:442)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/next-node
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:74:14).
+; Unable to resolve symbol: shortest-paths in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3820)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$IfExpr$Parser/parse (Compiler.java:2829)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$LetExpr$Parser/parse (Compiler.java:6436)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$DefExpr$Parser/parse (Compiler.java:596)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/shortest-paths
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+; Syntax error compiling at (c:\Users\admin\dijkstra\src\porkostomus\dijkstra.clj:50:8).
+; Unable to resolve symbol: % in this context
+clojure.lang.Compiler/analyze (Compiler.java:6808)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
+clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
+clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7095)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/access$300 (Compiler.java:38)
+clojure.lang.Compiler$DefExpr$Parser/parse (Compiler.java:596)
+clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
+clojure.lang.Compiler/analyze (Compiler.java:6789)
+clojure.lang.Compiler/eval (Compiler.java:7181)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/next-node
+clj::porkostomus.dijkstra=> 
+:red
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/next-node
+clj::porkostomus.dijkstra=> 
+; Execution error (ClassCastException) at porkostomus.dijkstra/next-node (REPL:48).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clojure.lang.Numbers/lt (Numbers.java:251)
+clojure.core/min-key (core.clj:5019)
+clojure.core/min-key (core.clj:5009)
+clojure.core/apply (core.clj:667)
+clojure.core/apply (core.clj:660)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:48)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:47)
+porkostomus.dijkstra/eval67954 (NO_SOURCE_FILE:92)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+{:1 [2147483647 nil], :2 [2147483647 nil], :3 [2147483647 nil], :4 [2147483647 nil], :red [0 :red]}
+clj::porkostomus.dijkstra=> 
+{:1 2147483647, :2 2147483647, :3 2147483647, :4 2147483647, :red 0}
+clj::porkostomus.dijkstra=> 
+{:1 nil, :2 nil, :3 nil, :4 nil, :red 0}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+; Execution error (ClassCastException) at porkostomus.dijkstra/next-node (REPL:48).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clojure.lang.Numbers/lt (Numbers.java:251)
+clojure.core/min-key (core.clj:5019)
+clojure.core/min-key (core.clj:5009)
+clojure.core/apply (core.clj:667)
+clojure.core/apply (core.clj:660)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:48)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:47)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:76)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:73)
+porkostomus.dijkstra/eval73010 (NO_SOURCE_FILE:103)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+2147483647
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+; Execution error (ClassCastException) at porkostomus.dijkstra/next-node (REPL:48).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clojure.lang.Numbers/lt (Numbers.java:251)
+clojure.core/min-key (core.clj:5019)
+clojure.core/min-key (core.clj:5009)
+clojure.core/apply (core.clj:667)
+clojure.core/apply (core.clj:660)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:48)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:47)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:76)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:73)
+porkostomus.dijkstra/eval73021 (NO_SOURCE_FILE:103)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/dijkstra
+clj::porkostomus.dijkstra=> 
+; Execution error (ClassCastException) at porkostomus.dijkstra/next-node (REPL:48).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clojure.lang.Numbers/lt (Numbers.java:251)
+clojure.core/min-key (core.clj:5019)
+clojure.core/min-key (core.clj:5009)
+clojure.core/apply (core.clj:667)
+clojure.core/apply (core.clj:660)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:48)
+porkostomus.dijkstra/next-node (NO_SOURCE_FILE:47)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:76)
+porkostomus.dijkstra/dijkstra (NO_SOURCE_FILE:73)
+porkostomus.dijkstra/eval73038 (NO_SOURCE_FILE:103)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+; Evaluating file: dijkstra.clj
+nil
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+; Execution error (StackOverflowError) at porkostomus.dijkstra/unwind-path$f (dijkstra.clj:61).
+; null
+clojure.lang.RT/seq (RT.java:537)
+clojure.lang.RT/first (RT.java:693)
+clojure.core/first (core.clj:55)
+clojure.core/second (core.clj:96)
+porkostomus.dijkstra/unwind-path (dijkstra.clj:61)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-costs
+clj::porkostomus.dijkstra=> 
+; Execution error (StackOverflowError) at porkostomus.dijkstra/unwind-path$f (dijkstra.clj:61).
+; null
+clojure.lang.RT/seq (RT.java:537)
+clojure.lang.RT/first (RT.java:693)
+clojure.core/first (core.clj:55)
+clojure.core/second (core.clj:96)
+porkostomus.dijkstra/unwind-path (dijkstra.clj:61)
+clj::porkostomus.dijkstra=> 
+; Evaluating file: dijkstra.clj
+nil
+clj::porkostomus.dijkstra=> 
+; Execution error (StackOverflowError) at porkostomus.dijkstra/unwind-path$f (dijkstra.clj:61).
+; null
+clojure.lang.RT/seq (RT.java:537)
+clojure.lang.RT/first (RT.java:693)
+clojure.core/first (core.clj:55)
+clojure.core/second (core.clj:96)
+porkostomus.dijkstra/unwind-path (dijkstra.clj:61)
+clj::porkostomus.dijkstra=> 
+; Execution error (StackOverflowError) at porkostomus.dijkstra/unwind-path$f (dijkstra.clj:61).
+; null
+clojure.lang.RT/first (RT.java:693)
+clojure.core/first (core.clj:55)
+clojure.core/second (core.clj:96)
+porkostomus.dijkstra/unwind-path (dijkstra.clj:61)
+clj::porkostomus.dijkstra=> 
+; Evaluating file: dijkstra.clj
+nil
+clj::porkostomus.dijkstra=> 
+; Execution error (StackOverflowError) at porkostomus.dijkstra/unwind-path$f (dijkstra.clj:61).
+; null
+clojure.lang.RT/first (RT.java:693)
+clojure.core/first (core.clj:55)
+clojure.core/second (core.clj:96)
+porkostomus.dijkstra/unwind-path (dijkstra.clj:61)
+clj::porkostomus.dijkstra=> 
+; Evaluating file: dijkstra.clj
+nil
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+[8 (:red :blue :green)]
+clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
+([:1 [2147483647 nil]] [:2 [2147483647 nil]] [:3 [2147483647 nil]] [:4 [2147483647 nil]])
+clj::porkostomus.dijkstra=> 
