@@ -198,7 +198,7 @@ cost
 (map update-node! (keys ((:current-node @graph-db) computerphile)))
 
 (defn next-node [graph]
-  (key (second (sort-by #(get-in (val %) [:distance]) (:nodes graph)))))
+  (key (first (filter #(pos? (get-in (val %) [:distance])) (sort-by #(get-in (val %) [:distance]) (:nodes @graph-db))))))
 
 ; 4. When we are done considering all of the unvisited neighbours of the current node,
 ;    mark the current node as visited and remove it from the unvisited set.
@@ -210,6 +210,9 @@ cost
 (swap! graph-db assoc :unvisited (mark-visited @graph-db))
 (swap! graph-db assoc :current-node (next-node @graph-db))
 
+(filter #(pos? (get-in (val %) [:distance])) (sort-by #(get-in (val %) [:distance]) (:nodes @graph-db)))
+
+(pos? 0)
 ; 5. If the destination node has been marked visited (when planning a route between two specific nodes)
 ;    or if the smallest tentative distance among the nodes in the unvisited set is infinity 
 ;    (when planning a complete traversal; occurs when there is no connection between
