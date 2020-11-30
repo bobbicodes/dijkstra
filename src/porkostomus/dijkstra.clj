@@ -185,7 +185,8 @@ cost
 
 (map update-node! (keys (:s computerphile)))
 
-@graph-db
+(vals (:nodes @graph-db))
+(sort-by #(get-in (val %) [:distance]) (:nodes @graph-db))
 
 ; 3. For the current node, consider all of its unvisited neighbours
 ;    and calculate their tentative distances through the current node.
