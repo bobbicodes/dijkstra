@@ -168,19 +168,25 @@ cost
 ;    set it to zero for our initial node and to infinity for all other nodes.
 ;    Set the initial node as current.
 
-(def graph-db
-  (atom {:nodes {}
-         :unvisited #{}
-         :current-node nil}))
+(def graph-db (atom {}))
 
-(defn initial-distances [graph initial-node]
+(defn init-graph! [graph initial-node]
   (swap! graph-db assoc :nodes (zipmap (keys graph) (repeat {:distance Integer/MAX_VALUE
                                                              :parent nil})))
   (swap! graph-db assoc :unvisited (set (keys graph)))
   (swap! graph-db assoc-in [:nodes initial-node :distance] 0)
   (swap! graph-db assoc :current-node initial-node))
 
-(initial-distances computerphile :s)
+(init-graph! computerphile :s)
+
+(first (keys (:s computerphile)))
+(:a (:s computerphile))
+
+(defn update-node! [node]
+  (swap! graph-db assoc-in [:nodes node :distance] (node ((:current-node @graph-db) computerphile)))
+  (swap! graph-db assoc-in [:nodes node :parent] :s))
+
+(update-node! :a)
 
 @graph-db
 
