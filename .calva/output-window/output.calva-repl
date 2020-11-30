@@ -665,3 +665,139 @@ clj::porkostomus.dijkstra=>
   :orange {:visited? false, :distance 2147483647}},
  :current-node :red}
 clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:red {:distance 0, :visited? false},
+  :green {:visited? false, :distance 2147483647},
+  :blue {:visited? false, :distance 2147483647},
+  :purple {:visited? false, :distance 2147483647},
+  :orange {:visited? false, :distance 2147483647}},
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:red {:distance 0, :visited? false},
+  :green {:distance 2147483647},
+  :blue {:distance 2147483647},
+  :purple {:distance 2147483647},
+  :orange {:distance 2147483647}},
+ :visited [],
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:red {:distance 0},
+  :green {:distance 2147483647},
+  :blue {:distance 2147483647},
+  :purple {:distance 2147483647},
+  :orange {:distance 2147483647}},
+ :visited [],
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red {:distance 0}, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647},
+ :visited [],
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647},
+ :visited [],
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647},
+ :unvisited #{},
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+{:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+{:nodes {}, :unvisited #{}, :current-node nil}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0},
+ :unvisited #{},
+ :current-node :red,
+ #{:orange :green :red :blue :purple}
+ {:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0},
+ :unvisited (:red :green :blue :purple :orange),
+ :current-node :red,
+ #{:orange :green :red :blue :purple}
+ {:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0},
+ :unvisited (:red :green :blue :purple :orange),
+ :current-node :red,
+ #{:orange :green :red :blue :purple}
+ {:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}}
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0},
+ :unvisited (:red :green :blue :purple :orange),
+ :current-node :red,
+ #{:orange :green :red :blue :purple}
+ {:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+{:nodes {}, :unvisited #{}, :current-node nil}
+clj::porkostomus.dijkstra=> 
+{:nodes {},
+ :unvisited #{},
+ :current-node nil,
+ #{:orange :green :red :blue :purple}
+ {:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647}}
+clj::porkostomus.dijkstra=> 
+(:red :green :blue :purple :orange)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 2147483647, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647},
+ :unvisited #{},
+ :current-node nil}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647},
+ :unvisited (:red :green :blue :purple :orange),
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/initial-distances
+clj::porkostomus.dijkstra=> 
+{:nodes {:red 0, :green 2147483647, :blue 2147483647, :purple 2147483647, :orange 2147483647},
+ :unvisited #{:orange :green :red :blue :purple},
+ :current-node :red}
+clj::porkostomus.dijkstra=> 
