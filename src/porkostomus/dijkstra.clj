@@ -174,12 +174,13 @@ cost
          :current-node nil}))
 
 (defn initial-distances [graph initial-node]
-  (swap! graph-db assoc :nodes (zipmap (keys graph) (repeat Integer/MAX_VALUE)))
+  (swap! graph-db assoc :nodes (zipmap (keys graph) (repeat {:distance Integer/MAX_VALUE
+                                                             :parent nil})))
   (swap! graph-db assoc :unvisited (set (keys graph)))
-  (swap! graph-db assoc-in [:nodes initial-node] 0)
+  (swap! graph-db assoc-in [:nodes initial-node :distance] 0)
   (swap! graph-db assoc :current-node initial-node))
 
-(initial-distances demo-graph :red)
+(initial-distances computerphile :s)
 
 @graph-db
 
