@@ -179,14 +179,11 @@ cost
 
 (init-graph! computerphile :s)
 
-(first (keys (:s computerphile)))
-(:a (:s computerphile))
-
 (defn update-node! [node]
   (swap! graph-db assoc-in [:nodes node :distance] (node ((:current-node @graph-db) computerphile)))
   (swap! graph-db assoc-in [:nodes node :parent] :s))
 
-(update-node! :a)
+(map update-node! (keys (:s computerphile)))
 
 @graph-db
 

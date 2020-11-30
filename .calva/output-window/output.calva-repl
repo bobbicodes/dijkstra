@@ -970,3 +970,163 @@ clj::porkostomus.dijkstra=>
  :unvisited #{:e :s :k :g :c :j :h :b :d :f :i :a},
  :current-node :s}
 clj::porkostomus.dijkstra=> 
+nil
+clj::porkostomus.dijkstra=> 
+nil
+clj::porkostomus.dijkstra=> 
+{:e {:g 2, :k 5},
+ :s {:a 7, :b 2, :c 3},
+ :k {:i 4, :j 4, :e 5},
+ :g {:h 2, :e 2},
+ :c {:s 3, :l 2},
+ :j {:i 6, :l 4, :k 4},
+ :h {:b 1, :f 3, :g 2},
+ :b {:s 2, :a 3, :d 4, :h 1},
+ :d {:a 4, :b 4, :f 5},
+ :f {:d 5, :h 3},
+ :i {:l 4, :j 6, :k 4},
+ :a {:s 7, :b 3, :d 4}}
+clj::porkostomus.dijkstra=> 
+(:e :s :k :g :c :j :h :b :d :f :i :a)
+clj::porkostomus.dijkstra=> 
+; Execution error (IllegalArgumentException) at porkostomus.dijkstra/eval119528 (REPL:186).
+; Don't know how to create ISeq from: clojure.lang.Keyword
+clojure.lang.RT/seqFrom (RT.java:557)
+clojure.lang.RT/seq (RT.java:537)
+clojure.lang.RT/keys (RT.java:624)
+clojure.core/keys (core.clj:1559)
+clojure.core/keys (core.clj:1555)
+porkostomus.dijkstra/eval119528 (NO_SOURCE_FILE:186)
+clojure.lang.Compiler/eval (Compiler.java:7177)
+clojure.core/eval (core.clj:3214)
+clojure.core/eval (core.clj:3210)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:665)
+clojure.core/with-bindings* (core.clj:1973)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:834)
+clj::porkostomus.dijkstra=> 
+:s
+clj::porkostomus.dijkstra=> 
+nil
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:e {:distance 2147483647, :parent nil},
+  :s {:distance 0, :parent nil},
+  :k {:distance 2147483647, :parent nil},
+  :g {:distance 2147483647, :parent nil},
+  :c {:distance 2147483647, :parent nil},
+  :j {:distance 2147483647, :parent nil},
+  :h {:distance 2147483647, :parent nil},
+  :b {:distance 2147483647, :parent nil},
+  :d {:distance 2147483647, :parent nil},
+  :f {:distance 2147483647, :parent nil},
+  :i {:distance 2147483647, :parent nil},
+  :a {:distance 7, :parent :s}},
+ :unvisited #{:e :s :k :g :c :j :h :b :d :f :i :a},
+ :current-node :s}
+clj::porkostomus.dijkstra=> 
+{:e {:distance 2147483647, :parent nil},
+ :s {:distance 0, :parent nil},
+ :k {:distance 2147483647, :parent nil},
+ :g {:distance 2147483647, :parent nil},
+ :c {:distance 2147483647, :parent nil},
+ :j {:distance 2147483647, :parent nil},
+ :h {:distance 2147483647, :parent nil},
+ :b {:distance 2147483647, :parent nil},
+ :d {:distance 2147483647, :parent nil},
+ :f {:distance 2147483647, :parent nil},
+ :i {:distance 2147483647, :parent nil},
+ :a {:distance 7, :parent :s}}
+clj::porkostomus.dijkstra=> 
+{:e {:g 2, :k 5},
+ :s {:a 7, :b 2, :c 3},
+ :k {:i 4, :j 4, :e 5},
+ :g {:h 2, :e 2},
+ :c {:s 3, :l 2},
+ :j {:i 6, :l 4, :k 4},
+ :h {:b 1, :f 3, :g 2},
+ :b {:s 2, :a 3, :d 4, :h 1},
+ :d {:a 4, :b 4, :f 5},
+ :f {:d 5, :h 3},
+ :i {:l 4, :j 6, :k 4},
+ :a {:s 7, :b 3, :d 4}}
+clj::porkostomus.dijkstra=> 
+{:a 7, :b 2, :c 3}
+clj::porkostomus.dijkstra=> 
+(:a :b :c)
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/graph-db
+clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/init-graph!
+clj::porkostomus.dijkstra=> 
+{:nodes
+ {:e {:distance 2147483647, :parent nil},
+  :s {:distance 0, :parent nil},
+  :k {:distance 2147483647, :parent nil},
+  :g {:distance 2147483647, :parent nil},
+  :c {:distance 2147483647, :parent nil},
+  :j {:distance 2147483647, :parent nil},
+  :h {:distance 2147483647, :parent nil},
+  :b {:distance 2147483647, :parent nil},
+  :d {:distance 2147483647, :parent nil},
+  :f {:distance 2147483647, :parent nil},
+  :i {:distance 2147483647, :parent nil},
+  :a {:distance 2147483647, :parent nil}},
+ :unvisited #{:e :s :k :g :c :j :h :b :d :f :i :a},
+ :current-node :s}
+clj::porkostomus.dijkstra=> 
+({:nodes
+  {:e {:distance 2147483647, :parent nil},
+   :s {:distance 0, :parent nil},
+   :k {:distance 2147483647, :parent nil},
+   :g {:distance 2147483647, :parent nil},
+   :c {:distance 2147483647, :parent nil},
+   :j {:distance 2147483647, :parent nil},
+   :h {:distance 2147483647, :parent nil},
+   :b {:distance 2147483647, :parent nil},
+   :d {:distance 2147483647, :parent nil},
+   :f {:distance 2147483647, :parent nil},
+   :i {:distance 2147483647, :parent nil},
+   :a {:distance 7, :parent :s}},
+  :unvisited #{:e :s :k :g :c :j :h :b :d :f :i :a},
+  :current-node :s}
+ {:nodes
+  {:e {:distance 2147483647, :parent nil},
+   :s {:distance 0, :parent nil},
+   :k {:distance 2147483647, :parent nil},
+   :g {:distance 2147483647, :parent nil},
+   :c {:distance 2147483647, :parent nil},
+   :j {:distance 2147483647, :parent nil},
+   :h {:distance 2147483647, :parent nil},
+   :b {:distance 2, :parent :s},
+   :d {:distance 2147483647, :parent nil},
+   :f {:distance 2147483647, :parent nil},
+   :i {:distance 2147483647, :parent nil},
+   :a {:distance 7, :parent :s}},
+  :unvisited #{:e :s :k :g :c :j :h :b :d :f :i :a},
+  :current-node :s}
+ {:nodes
+  {:e {:distance 2147483647, :parent nil},
+   :s {:distance 0, :parent nil},
+   :k {:distance 2147483647, :parent nil},
+   :g {:distance 2147483647, :parent nil},
+   :c {:distance 3, :parent :s},
+   :j {:distance 2147483647, :parent nil},
+   :h {:distance 2147483647, :parent nil},
+   :b {:distance 2, :parent :s},
+   :d {:distance 2147483647, :parent nil},
+   :f {:distance 2147483647, :parent nil},
+   :i {:distance 2147483647, :parent nil},
+   :a {:distance 7, :parent :s}},
+  :unvisited #{:e :s :k :g :c :j :h :b :d :f :i :a},
+  :current-node :s})
+clj::porkostomus.dijkstra=> 
