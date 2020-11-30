@@ -801,3 +801,7 @@ clj::porkostomus.dijkstra=>
  :unvisited #{:orange :green :red :blue :purple},
  :current-node :red}
 clj::porkostomus.dijkstra=> 
+#'porkostomus.dijkstra/computerphile
+clj::porkostomus.dijkstra=> 
+[7 (:s :b :h :g :e)]
+clj::porkostomus.dijkstra=> 
