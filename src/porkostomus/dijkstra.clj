@@ -2,6 +2,9 @@
   (:require [rhizome.viz :refer [view-graph]]
             [clojure.data.priority-map :refer [priority-map]]))
 
+; Graphs are represented as maps with nodes as keys,
+; each mapped to a map of its neighbors to their costs.
+
 (def g {:1 {:2 1 :3 2}
         :2 {:4 4}
         :3 {:4 2}
@@ -36,6 +39,7 @@
    :node->descriptor (fn [n] {:label (name n)})
    :edge->descriptor (fn [src dst] {:label (dst (src graph))})))
 
+;  Dijkstra's shortest path algorithm
 ;  From: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Algorithm
 
 ; Rather than try to produce the most concise, elegant or performant solution,
@@ -72,19 +76,14 @@
 ;    If B was previously marked with a distance greater than 8 then change it to 8.
 ;    Otherwise, the current value will be kept.
 
-(let [node (:a (:nodes @graph-db))
-      dist (:a ((:current-node @graph-db) computerphile))]
-  [(:distance node) dist])
-
-(:a ((:current-node @graph-db) computerphile))
-
-(:distance (:a (:nodes @graph-db)))
-
 (defn update-node! [node]
-  (let [new-dist (node ((:current-node @graph-db) computerphile))]
-    (when (< new-dist (:distance (node (:nodes @graph-db))))
-      (swap! graph-db assoc-in [:nodes node :distance] new-dist)
-      (swap! graph-db assoc-in [:nodes node :parent] (:current-node @graph-db)))))
+  (let [edge-dist (node ((:current-node @graph-db) computerphile))]
+    (when (< edge-dist (:distance (node (:nodes @graph-db))))
+      (swap! graph-db assoc-in [:nodes node :parent] (:current-node @graph-db))
+      (swap! graph-db assoc-in [:nodes node :distance] (+ (if (:parent (node (:nodes @graph-db)))
+                                                            (:distance ((:parent (node (:nodes @graph-db))) (:nodes @graph-db))) 
+                                                            0) 
+                                                          edge-dist)))))
 
 (map update-node! (keys ((:current-node @graph-db) computerphile)))
 
@@ -92,21 +91,27 @@
   (key (first (filter #(pos? (get-in (val %) [:distance]))
                       (sort-by #(get-in (val %) [:distance]) (:nodes graph))))))
 
+(next-node @graph-db)
+
 ; 4. When we are done considering all of the unvisited neighbours of the current node,
 ;    mark the current node as visited and remove it from the unvisited set.
 ;    A visited node will never be checked again.
 
-(defn mark-visited [graph]
+(defn remove-current-node [graph]
   (disj (:unvisited graph) (:current-node graph)))
 
-(swap! graph-db assoc :unvisited (mark-visited @graph-db))
-(swap! graph-db assoc :current-node (next-node @graph-db))
+(defn mark-visited! [graph]
+  (swap! graph-db assoc :unvisited (remove-current-node graph))
+  (swap! graph-db assoc :current-node (next-node graph)))
+
+(mark-visited! @graph-db)
 
 ; 5. If the destination node has been marked visited (when planning a route between two specific nodes)
 ;    or if the smallest tentative distance among the nodes in the unvisited set is infinity 
 ;    (when planning a complete traversal; occurs when there is no connection between
 ;    the initial node and remaining unvisited nodes), then stop. The algorithm has finished.
-; 6. Otherwise, select the unvisited node that is marked with the smallest tentative distance, set it as the new "current node", and go back to step 3.
+; 6. Otherwise, select the unvisited node that is marked with the smallest tentative distance,
+; set it as the new "current node", and go back to step 3.
 
 
 
