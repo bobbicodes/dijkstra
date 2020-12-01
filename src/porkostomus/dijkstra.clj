@@ -2,12 +2,6 @@
   (:require [rhizome.viz :refer [view-graph]]
             [clojure.data.priority-map :refer [priority-map]]))
 
-(defn show! [graph]
-  (view-graph
-   (keys graph) (fn [n] (map first (get graph n)))
-   :node->descriptor (fn [n] {:label (name n)})
-   :edge->descriptor (fn [src dst] {:label (dst (src graph))})))
-
 (def g {:1 {:2 1 :3 2}
         :2 {:4 4}
         :3 {:4 2}
@@ -20,9 +14,107 @@
    :purple {:blue 7,   :orange 2}
    :orange {:purple 2, :red    2}})
 
+(def computerphile
+  {:s {:a 7 :b 2 :c 3}
+   :a {:s 7 :b 3 :d 4}
+   :b {:s 2 :a 3 :d 4 :h 1}
+   :c {:s 3 :l 2}
+   :d {:a 4 :b 4 :f 5}
+   :e {:g 2 :k 5}
+   :f {:d 5 :h 3}
+   :g {:h 2 :e 2}
+   :h {:b 1 :f 3 :g 2}
+   :i {:l 4 :j 6 :k 4}
+   :j {:i 6 :l 4 :k 4}
+   :k {:i 4 :j 4 :e 5}})
+
+(defn show!
+  "Displays a GraphViz image of graph."
+  [graph]
+  (view-graph
+   (keys graph) (fn [n] (map first (get graph n)))
+   :node->descriptor (fn [n] {:label (name n)})
+   :edge->descriptor (fn [src dst] {:label (dst (src graph))})))
+
+;  From: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Algorithm
+
+; Rather than try to produce the most concise, elegant or performant solution,
+; I tried to go for clarity of understanding.
+; I thought it would be interesting to treat the algorithm like an in-memory database,
+; very much inspired by re-frame's use of a central atom to hold the entire app-state.
+; I feel this approach highlights the algorithm's procedural nature,
+; showcasing the operations performed instead of obscuring them .
+
+; 1. Mark all nodes unvisited. Create a set of all the unvisited nodes called the unvisited set.
+; 2. Assign to every node a tentative distance value: 
+;    set it to zero for our initial node and to infinity for all other nodes.
+;    Set the initial node as current.
+;    
+(def graph-db (atom {}))
+
+(defn init-graph! [graph initial-node]
+  (swap! graph-db assoc :nodes (zipmap (keys graph) (repeat {:distance Integer/MAX_VALUE
+                                                             :parent nil})))
+  (swap! graph-db assoc :unvisited (set (keys graph)))
+  (swap! graph-db assoc-in [:nodes initial-node :distance] 0)
+  (swap! graph-db assoc :current-node initial-node))
+
+(init-graph! computerphile :s)
+
+; 3. For the current node, consider all of its unvisited neighbours
+;    and calculate their tentative distances through the current node.
+;    Compare the newly calculated tentative distance to
+;    the current assigned value and assign the smaller one.
+
+;    For example, if the current node A is marked with a distance of 6,
+;    and the edge connecting it with a neighbour B has length 2,
+;    then the distance to B through A will be 6 + 2 = 8.
+;    If B was previously marked with a distance greater than 8 then change it to 8.
+;    Otherwise, the current value will be kept.
+
+(let [node (:a (:nodes @graph-db))
+      dist (:a ((:current-node @graph-db) computerphile))]
+  [(:distance node) dist])
+
+(:a ((:current-node @graph-db) computerphile))
+
+(:distance (:a (:nodes @graph-db)))
+
+(defn update-node! [node]
+  (let [new-dist (node ((:current-node @graph-db) computerphile))]
+    (when (< new-dist (:distance (node (:nodes @graph-db))))
+      (swap! graph-db assoc-in [:nodes node :distance] new-dist)
+      (swap! graph-db assoc-in [:nodes node :parent] (:current-node @graph-db)))))
+
+(map update-node! (keys ((:current-node @graph-db) computerphile)))
+
+(defn next-node [graph]
+  (key (first (filter #(pos? (get-in (val %) [:distance]))
+                      (sort-by #(get-in (val %) [:distance]) (:nodes graph))))))
+
+; 4. When we are done considering all of the unvisited neighbours of the current node,
+;    mark the current node as visited and remove it from the unvisited set.
+;    A visited node will never be checked again.
+
+(defn mark-visited [graph]
+  (disj (:unvisited graph) (:current-node graph)))
+
+(swap! graph-db assoc :unvisited (mark-visited @graph-db))
+(swap! graph-db assoc :current-node (next-node @graph-db))
+
+; 5. If the destination node has been marked visited (when planning a route between two specific nodes)
+;    or if the smallest tentative distance among the nodes in the unvisited set is infinity 
+;    (when planning a complete traversal; occurs when there is no connection between
+;    the initial node and remaining unvisited nodes), then stop. The algorithm has finished.
+; 6. Otherwise, select the unvisited node that is marked with the smallest tentative distance, set it as the new "current node", and go back to step 3.
+
+
+
+
 (comment
   (show! g)
-  (show! demo-graph))
+  (show! demo-graph)
+  (show! computerphile))
 
 (defn neighbors [node g costs]
   (into {} (map (fn [[neighbor cost]]
@@ -147,74 +239,7 @@ cost
   (dijkstra :red :green demo-graph)
   (dijkstra-pm :red :green demo-graph))
 
-(def computerphile
-  {:s {:a 7 :b 2 :c 3}
-   :a {:s 7 :b 3 :d 4}
-   :b {:s 2 :a 3 :d 4 :h 1}
-   :c {:s 3 :l 2}
-   :d {:a 4 :b 4 :f 5}
-   :e {:g 2 :k 5}
-   :f {:d 5 :h 3}
-   :g {:h 2 :e 2}
-   :h {:b 1 :f 3 :g 2}
-   :i {:l 4 :j 6 :k 4}
-   :j {:i 6 :l 4 :k 4}
-   :k {:i 4 :j 4 :e 5}})
+
 
 (dijkstra :s :e computerphile)
 
-;  From: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Algorithm
-
-; 1. Mark all nodes unvisited. Create a set of all the unvisited nodes called the unvisited set.
-; 2. Assign to every node a tentative distance value: 
-;    set it to zero for our initial node and to infinity for all other nodes.
-;    Set the initial node as current.
-
-(def graph-db (atom {}))
-
-(defn init-graph! [graph initial-node]
-  (swap! graph-db assoc :nodes (zipmap (keys graph) (repeat {:distance Integer/MAX_VALUE
-                                                             :parent nil})))
-  (swap! graph-db assoc :unvisited (set (keys graph)))
-  (swap! graph-db assoc-in [:nodes initial-node :distance] 0)
-  (swap! graph-db assoc :current-node initial-node))
-
-(init-graph! computerphile :s)
-
-; 3. For the current node, consider all of its unvisited neighbours
-;    and calculate their tentative distances through the current node.
-;    Compare the newly calculated tentative distance to the current assigned value and assign the smaller one.
-
-;    For example, if the current node A is marked with a distance of 6,
-;    and the edge connecting it with a neighbour B has length 2,
-;    then the distance to B through A will be 6 + 2 = 8.
-;    If B was previously marked with a distance greater than 8 then change it to 8.
-;    Otherwise, the current value will be kept.
-
-(defn update-node! [node]
-  (swap! graph-db assoc-in [:nodes node :distance] (node ((:current-node @graph-db) computerphile)))
-  (swap! graph-db assoc-in [:nodes node :parent] (:current-node @graph-db)))
-
-(map update-node! (keys ((:current-node @graph-db) computerphile)))
-
-(defn next-node [graph]
-  (key (first (filter #(pos? (get-in (val %) [:distance])) (sort-by #(get-in (val %) [:distance]) (:nodes @graph-db))))))
-
-; 4. When we are done considering all of the unvisited neighbours of the current node,
-;    mark the current node as visited and remove it from the unvisited set.
-;    A visited node will never be checked again.
-
-(defn mark-visited [graph]
-  (disj (:unvisited graph) (:current-node graph)))
-
-(swap! graph-db assoc :unvisited (mark-visited @graph-db))
-(swap! graph-db assoc :current-node (next-node @graph-db))
-
-(filter #(pos? (get-in (val %) [:distance])) (sort-by #(get-in (val %) [:distance]) (:nodes @graph-db)))
-
-(pos? 0)
-; 5. If the destination node has been marked visited (when planning a route between two specific nodes)
-;    or if the smallest tentative distance among the nodes in the unvisited set is infinity 
-;    (when planning a complete traversal; occurs when there is no connection between
-;    the initial node and remaining unvisited nodes), then stop. The algorithm has finished.
-; 6. Otherwise, select the unvisited node that is marked with the smallest tentative distance, set it as the new "current node", and go back to step 3.
