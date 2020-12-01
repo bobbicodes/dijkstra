@@ -29,7 +29,8 @@
    :h {:b 1 :f 3 :g 2}
    :i {:l 4 :j 6 :k 4}
    :j {:i 6 :l 4 :k 4}
-   :k {:i 4 :j 4 :e 5}})
+   :k {:i 4 :j 4 :e 5}
+   :l {:c 2 :i 4 :j 4}})
 
 (defn show!
   "Displays a GraphViz image of graph."
@@ -80,18 +81,22 @@
   (let [edge-dist (node ((:current-node @graph-db) computerphile))]
     (when (< edge-dist (:distance (node (:nodes @graph-db))))
       (swap! graph-db assoc-in [:nodes node :parent] (:current-node @graph-db))
-      (swap! graph-db assoc-in [:nodes node :distance] (+ (if (:parent (node (:nodes @graph-db)))
-                                                            (:distance ((:parent (node (:nodes @graph-db))) (:nodes @graph-db))) 
-                                                            0) 
-                                                          edge-dist)))))
+      (swap! graph-db assoc-in [:nodes node :distance]
+             (+ (if (:parent (node (:nodes @graph-db)))
+                  (:distance ((:parent (node (:nodes @graph-db))) (:nodes @graph-db)))
+                  0)
+                edge-dist)))))
 
+(:parent (:l (:nodes @graph-db)))
+(update-node! :l)
+@graph-db
 (map update-node! (keys ((:current-node @graph-db) computerphile)))
+
+(select-keys (:nodes @graph-db) (:unvisited @graph-db))
 
 (defn next-node [graph]
   (key (first (filter #(pos? (get-in (val %) [:distance]))
-                      (sort-by #(get-in (val %) [:distance]) (:nodes graph))))))
-
-(next-node @graph-db)
+                      (sort-by #(get-in (val %) [:distance]) (select-keys (:nodes graph) (:unvisited graph)))))))
 
 ; 4. When we are done considering all of the unvisited neighbours of the current node,
 ;    mark the current node as visited and remove it from the unvisited set.
@@ -100,11 +105,13 @@
 (defn remove-current-node [graph]
   (disj (:unvisited graph) (:current-node graph)))
 
-(defn mark-visited! [graph]
-  (swap! graph-db assoc :unvisited (remove-current-node graph))
-  (swap! graph-db assoc :current-node (next-node graph)))
+(defn mark-visited! []
+  (swap! graph-db assoc :unvisited (disj (:unvisited @graph-db) (:current-node @graph-db)))
+  (swap! graph-db assoc :current-node (next-node @graph-db)))
 
-(mark-visited! @graph-db)
+(next-node @graph-db)
+
+(mark-visited!)
 
 ; 5. If the destination node has been marked visited (when planning a route between two specific nodes)
 ;    or if the smallest tentative distance among the nodes in the unvisited set is infinity 
